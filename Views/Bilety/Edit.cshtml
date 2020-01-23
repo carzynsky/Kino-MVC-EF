@@ -1,0 +1,47 @@
+﻿@model KinoDotNetCore.Models.Bilety
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Seanse</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div>
+                <p style="font-size:26px;">@Html.DisplayFor(m => m.Klient.Imie)</p>
+                <hr />
+            </div>
+            <div>
+                <p style="font-size:26px;">@Html.DisplayFor(m => m.Klient.Nazwisko)</p>
+                <hr />
+            </div>
+            <div>
+                <p style="font-size:18px;">Id klienta: @Html.DisplayFor(m => m.KlientId)</p>
+                <hr />
+            </div>
+            <div>
+                <p style="font-size:18px;">Id seansu: @Html.DisplayFor(m => m.Seans.Id)</p>
+                <hr />
+            </div>
+            <div class="form-group">
+                <label asp-for="StanBiletu" class="control-label"></label>
+                <select asp-for="StanBiletu" class="form-control" asp-items="ViewBag.StanBiletu"></select>
+                <span asp-validation-for="StanBiletu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

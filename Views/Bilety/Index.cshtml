@@ -1,0 +1,66 @@
+﻿@model IEnumerable<KinoDotNetCore.Models.Bilety>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StanBiletu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seans.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seans.FilmyId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klient.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klient.Nazwisko)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klient.Nazwisko)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StanBiletu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seans.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seans.FilmyId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Klient.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Klient.Imie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Klient.Nazwisko)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
